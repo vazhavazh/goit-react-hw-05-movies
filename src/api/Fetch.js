@@ -17,3 +17,15 @@ export const fetchMovieById = async (id) => {
     const json = await response.json()
     return json
 }
+
+export const fetchMovieActorsById = async (id) => {
+    const response = await fetch(`${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}`)
+    const json = await response.json()
+    return json
+}
+
+export const fetchMovieReviewsById = async (id) => {
+    const response = await fetch(`${BASE_URL}/movie/${id}/reviews?api_key=${API_KEY}`)
+    const json = await response.json()
+    return json
+}

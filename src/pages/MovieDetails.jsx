@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link, Outlet } from 'react-router-dom';
+
 
 import { fetchMovieById } from '../api/Fetch';
 
@@ -33,7 +34,6 @@ export const MovieDetails = () => {
 
    return (
      <>
-    
        <h2>{title}</h2>
        <p>{overview}</p>
        <p>Release date: {release_date}</p>
@@ -42,6 +42,13 @@ export const MovieDetails = () => {
          src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
          alt={`${title} poster`}
        />
+       <>
+         <div>
+           <Link to={`cast`}>Casts</Link>
+           <Link to={`reviews`}>Reviews</Link>
+         </div>
+       </>
+       <Outlet />
      </>
    );
 };
