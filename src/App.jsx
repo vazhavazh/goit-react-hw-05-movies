@@ -27,7 +27,3 @@ export const App = () => {
   );
 };
 
-{
-  /* 
-        <Route path="reviews" element={<Reviews />} /> */
-}
