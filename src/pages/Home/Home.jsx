@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import { fetchTrendingVideo } from '../../api/Fetch';
 import {StyledLink} from './HomeStyled'
 export default function Home() {
