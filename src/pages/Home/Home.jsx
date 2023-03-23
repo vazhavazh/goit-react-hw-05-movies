@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchTrendingVideo } from '../api/Fetch';
-
-export const Home = () => {
+import { fetchTrendingVideo } from '../../api/Fetch';
+import {StyledLink} from './HomeStyled'
+export default function Home() {
   const [trendingMovies, setTrendingMovies] = useState([]);
   useEffect(() => {
     const getTrendingVideo = async () => {
@@ -21,12 +21,12 @@ export const Home = () => {
       <ul>
         {trendingMovies.map(movie => (
           <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`}>
+            <StyledLink to={`/movies/${movie.id}`}>
               <p>{movie.title}</p>
-            </Link>
+            </StyledLink>
           </li>
         ))}
       </ul>
     </>
   );
-};
+}

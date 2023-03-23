@@ -1,22 +1,13 @@
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { Nav, StyledLink } from './HeaderStyled';
 
 export const Header = () => {
   return (
-    <nav>
+    <Nav>
       <StyledLink to="/" end>
         {' '}
         Home{' '}
       </StyledLink>
       <StyledLink to="/movies"> Movies </StyledLink>
-    </nav>
+    </Nav>
   );
 };
-
-const StyledLink = styled(NavLink)`
-  color: black;
-
-  &.active {
-    color: #ff006a;
-  }
-`;
