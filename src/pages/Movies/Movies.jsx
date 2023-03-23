@@ -7,6 +7,7 @@ export default function Movies() {
   const [query, setQuery] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
 
+
   const handleInputChange = e => {
     const value = e.target.value.toLowerCase();
     setQuery(prevQuery => value);
@@ -55,3 +56,4 @@ export default function Movies() {
     </>
   );
 }
+//
