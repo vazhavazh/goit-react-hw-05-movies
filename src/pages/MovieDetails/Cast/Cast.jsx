@@ -22,22 +22,26 @@ export default function Cast() {
 
   return (
     <>
-      <ul>
-        {cast.map(actor => (
-          <ActorItem key={actor.id}>
-            <Image
-              src={
-                actor.profile_path
-                  ? `https://image.tmdb.org/t/p/w500/${actor.profile_path}`
-                  : ''
-              }
-              alt=""
-            />
-            <h4>{actor.name}</h4>
-            <span>Character - {actor.character}</span>
-          </ActorItem>
-        ))}
-      </ul>
+      {cast.length > 0 ? (
+        <ul>
+          {cast.map(actor => (
+            <ActorItem key={actor.id}>
+              <Image
+                src={
+                  actor.profile_path
+                    ? `https://image.tmdb.org/t/p/w500/${actor.profile_path}`
+                    : ''
+                }
+                alt=""
+              />
+              <h4>{actor.name}</h4>
+              <span>Character - {actor.character}</span>
+            </ActorItem>
+          ))}
+        </ul>
+      ) : (
+        <p>We don't have this info</p>
+      )}
     </>
   );
 }
